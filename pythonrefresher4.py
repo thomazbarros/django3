@@ -15,6 +15,5 @@ print(len(dognames))
 
 dognames[1]= "Spot"
 
-
 print(dognames)
 

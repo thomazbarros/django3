@@ -15,5 +15,3 @@ sentence = hello(name, age)
 
 print(sentence)
 
-def tripleprint(word):
-    print(word*3)
