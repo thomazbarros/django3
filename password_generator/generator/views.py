@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def home(request):
     return HttpResponse("Hello there!")
+
+def eggs(request):
+    return HttpResponse("<h1>Eggs are tasty.</h1>")
