@@ -7,4 +7,7 @@ def home(request):
     return render(request, 'generator/home.html', {'password':'RIO DE JANEIRO'})
 
 def password(request):
-    return render(request, 'generator/password.html')
+
+    thepassword = 'senha'
+
+    return render(request, 'generator/password.html', {'password':thepassword})
