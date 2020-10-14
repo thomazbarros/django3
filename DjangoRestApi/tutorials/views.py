@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+# Create your views here.
+
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
 from rest_framework import status
@@ -7,7 +9,6 @@ from rest_framework import status
 from tutorials.models import Tutorial
 from tutorials.serializers import TutorialSerializer
 from rest_framework.decorators import api_view
-
 
 @api_view(['GET', 'POST', 'DELETE'])
 def tutorial_list(request):
@@ -33,8 +34,7 @@ def tutorial_list(request):
     elif request.method == 'DELETE':
         count = Tutorial.objects.all().delete()
         return JsonResponse({'message': '{} Tutorials were deleted successfully!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
- 
- 
+
 @api_view(['GET', 'PUT', 'DELETE'])
 def tutorial_detail(request, pk):
     try: 
@@ -58,7 +58,6 @@ def tutorial_detail(request, pk):
         tutorial.delete() 
         return JsonResponse({'message': 'Tutorial was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
     
-        
 @api_view(['GET'])
 def tutorial_list_published(request):
     tutorials = Tutorial.objects.filter(published=True)
