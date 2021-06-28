@@ -22,3 +22,4 @@ urlpatterns = [
     path('generatedpassword/', views.password, name = 'password'),
     path('', views.home),
 ]
+
